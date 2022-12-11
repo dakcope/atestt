@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<header class="header-admin">
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-2 col-sm-4 col-4 text-md-start  align-self-center">
+                <img src="/static/img/logo.svg" alt="logo">
+            </div>
+
+            <div class=" col-md-4 text-md-start  text-sm-center text-center col-sm-8 col-8 ">
+                <h1>Админ-панель</h1>
+            </div>
+
+
+            <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
+                <form method="get" th:action="@{/admin/product/add}">
+                    <input type="submit" value="Добавить">
+                </form>
+            </div>
+            <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
+                <form th:method="POST" th:action="@{/logout}">
+                    <input type="submit" value="Выйти из личного кабинета">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+<br>
+
+<h3>Личный кабинет администратора</h3>
+<br>
+
+<h3>Каталог товаров: </h3>
+<br>
+<hr>
+<div class="container">
+    <div class="row">
+        <div th:each="product : ${products}" class=" col-md-5 text-md-center  text-sm-center text-center col-sm-11 col-12 product-div-admin">
+            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+            <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
+            <p th:text="'Описание: ' + ${product.getDescription()}"></p>
+            <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+            <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
+            <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
+            <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
+            <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}" class="admin-btn-prod">Редактировать товар</a>
+            <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}" class="admin-btn-prod">Удалить товар</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

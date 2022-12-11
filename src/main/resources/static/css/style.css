@@ -1,0 +1,253 @@
+body {
+    background-color: rgb(214, 214, 214);
+    margin-bottom: 5%;
+}
+
+header {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+
+}
+
+.header-a {
+
+    color: white;
+    font-weight: bold;
+}
+
+
+.header-a:hover {
+    color: rgb(59, 70, 66);
+
+    background-color: #fdf5ee;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+main {
+    margin-top: 50px;
+
+}
+
+#authoriz {
+    opacity: 0.1;
+    background-color: #e9b384;
+    align-items: center;
+    justify-items: center;
+    padding: 25px;
+    font-weight: bolder;
+    border-radius: 50px;
+    border-style: solid
+}
+
+#authoriz:hover {
+    opacity: 1;
+}
+
+
+#registr {
+    opacity: 0.1;
+    background-color: #7ef087;
+    align-items: center;
+    justify-items: center;
+    padding: 25px;
+    font-weight: bolder;
+    border-radius: 50px;
+    border-style: solid;
+    margin-left: 25%;
+
+}
+
+#registr:hover {
+    opacity: 1;
+}
+
+#authoriz p {
+    text-decoration: none;
+    position: relative;
+}
+
+#username {
+    margin-left: 11px;
+}
+
+#login {
+    margin-left: 11px;
+}
+
+h3 {
+    margin-left: 20%;
+}
+
+.btn-header-user input{
+    background-color: #cdffd1;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.btn-header-user input:hover{
+    background-color: #54fa62;
+    border-radius: 10px;
+    border-style: solid;
+    color: rgb(255, 255, 255);
+}
+
+.search-btn input{
+    font-size: 25px;
+    background-color: #98fff1;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.search-btn input:hover{
+    background-color: #68babd;
+    border-radius: 10px;
+    border-style: solid;
+    color: rgb(255, 255, 255);
+}
+
+.to-cart-href{
+    font-size: 20px;
+    background-color: #b8b3fc;
+    border-radius: 20px;
+    border-style:hidden;
+    text-decoration: none;
+    color: black;
+}
+
+.to-cart-href:hover{
+    font-size: 25px;
+    background-color: #776ef7;
+    border-radius: 20px;
+    border-style:hidden;
+    text-decoration: none;
+    color: rgb(207, 195, 195);
+}
+
+.product-name-href{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15;
+}
+
+.product-div{
+    border-style:groove;
+    border-color: #6c61ff;
+}
+
+.product-div:hover{
+    border-style:groove;
+    border-color: #827afd;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(85,204,199,1) 8%, rgba(195,195,195,0.46262254901960786) 93%);
+    font-size: large;
+}
+
+.product-div-cart{
+    border-style:groove;
+    border-color: #f34f4f;
+}
+
+.product-div-cart:hover{
+    border-style:groove;
+    border-color: #f70000;
+    background: rgb(255,101,101);
+    background: linear-gradient(0deg, rgba(255,101,101,1) 0%, rgba(217,124,124,1) 8%, rgba(195,195,195,0.46262254901960786) 93%);
+    font-size: large;
+
+}
+.product-div-cart a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.div-cart-buy a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.div-cart-buy a:hover{
+    text-decoration: none;
+    color: rgb(48, 12, 12);
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+.div-product-info{
+    margin: 5px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color: rgb(206, 202, 202);
+}
+
+.div-product-info-img img{
+    margin-top: 30px;
+}
+
+
+.header-admin{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,156,228,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.header-admin-elem {
+
+    color: white;
+    font-weight: bold;
+}
+.header-admin-elem a{
+    text-decoration: none;
+}
+
+.header-admin-elem a:hover {
+    color: rgb(59, 70, 66);
+    background-color: #fdf5ee;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+
+.btn-header-admin input{
+    background-color: #cdffd1;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.btn-header-admin input:hover{
+    background-color: #54fa62;
+    border-radius: 10px;
+    border-style: solid;
+    color: rgb(255, 255, 255);
+}
+
+.admin-btn-prod{
+    text-decoration: none;
+    border-style: solid;
+    color: black;
+    border-color: #6c61ff;
+    border-radius: 10px;
+}
+
+.admin-btn-prod:hover{
+    text-decoration: none;
+    border-style: solid;
+    color: rgb(236, 236, 236);
+    border-color: #6c61ff;
+    border-radius: 10px;
+    background-color: #776ef7;
+}
+
+.product-div-admin{
+    margin: 20px;
+    border-style: double;
+    border-color: #827afd;
+}
+
+.search-div{
+    margin-left: 30px;
+}
