@@ -58,6 +58,7 @@ public class PersonService {
     @Transactional
     public void updatePerson(int id,  Person person){
         person.setId(id);
+        person.setPassword(passwordEncoder.encode(person.getPassword()));
         personRepository.save(person);
     }
 

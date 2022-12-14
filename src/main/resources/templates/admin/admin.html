@@ -41,29 +41,62 @@
     </div>
 
 </header>
-
-
+<br>
 <br>
 
 <h3>Личный кабинет администратора</h3>
 <br>
-
-<h3>Каталог товаров: </h3>
 <br>
-<hr>
+<h4 class="text-md-center">Заказы пользователей</h4>
+<br>
+<br>
 <div class="container">
     <div class="row">
-        <div th:each="product : ${products}" class=" col-md-5 text-md-center  text-sm-center text-center col-sm-11 col-12 product-div-admin">
-            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
-            <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-            <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-            <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-            <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-            <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-            <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
-            <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}" class="admin-btn-prod">Редактировать товар</a>
-            <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}" class="admin-btn-prod">Удалить товар</a>
+
+
+        <div  class=" col-md-12 text-md-center text-sm-center text-center col-sm-12 col-12 d-flex justify-content-start order-div ">
+
+            <div th:each="order : ${orders}" class=" col-md-3 text-md-center text-sm-center text-center col-sm-3 col-6 product-div">
+            <h5 th:text="'Заказ № ' + ${order.getNumber()}"></h5>
+            <br>
+            <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px" height="300px">
+            <br>
+            <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+            <p th:text="'Количество: ' + ${order.getCount()}"></p>
+            <p th:text="'Цена: ' + ${order.getPrice()}  + '₽'"></p>
+            <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
+            <p th:text="'Статус: ' + ${order.getStatus()}"></p>
+                <p th:text="'Пользователь: ' + ${order.getPerson().getLogin()}"></p>
+            </div>
         </div>
+        <br>
+
+        <h3>Каталог товаров: </h3>
+        <br>
+
+            <div th:each="product : ${products}" class=" col-md-8 text-md-center  text-sm-center text-center col-sm-8 col-10 product-div-admin">
+                <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+                <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
+                <p th:text="'Описание: ' + ${product.getDescription()}"></p>
+                <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+                <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
+                <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
+                <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
+                <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}" class="admin-btn-prod">Редактировать товар</a>
+                <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}" class="admin-btn-prod">Удалить товар</a>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+
     </div>
 </div>
 </body>

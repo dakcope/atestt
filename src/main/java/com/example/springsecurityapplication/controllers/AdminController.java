@@ -5,6 +5,7 @@ import com.example.springsecurityapplication.models.Person;
 import com.example.springsecurityapplication.models.Product;
 import com.example.springsecurityapplication.repositories.CategoryRepository;
 import com.example.springsecurityapplication.security.PersonDetails;
+import com.example.springsecurityapplication.services.OrdersService;
 import com.example.springsecurityapplication.services.PersonService;
 import com.example.springsecurityapplication.services.ProductService;
 import com.example.springsecurityapplication.util.ProductValidator;
@@ -37,12 +38,15 @@ public class AdminController {
     private final CategoryRepository categoryRepository;
 
     private final PersonService personService;
+
+    private final OrdersService ordersService;
     @Autowired
-    public AdminController(ProductValidator productValidator, ProductService productService, CategoryRepository categoryRepository, PersonService personService) {
+    public AdminController(ProductValidator productValidator, ProductService productService, CategoryRepository categoryRepository, PersonService personService, OrdersService ordersService) {
         this.productValidator = productValidator;
         this.productService = productService;
         this.categoryRepository = categoryRepository;
         this.personService = personService;
+        this.ordersService = ordersService;
     }
 
     //    @PreAuthorize("hasRole('ROLE_ADMIN') and hasRole('')")
@@ -60,6 +64,7 @@ public class AdminController {
             return "redirect:/index";
         }
         model.addAttribute("products", productService.getAllProduct());
+        model.addAttribute("orders", ordersService.getAllOrders());
         return "admin/admin";
     }
 
