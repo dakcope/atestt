@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
+    <link rel="icon" href="/static/img/eye.png" type="eye.png">
 </head>
 <body>
 <header class="header-admin">
@@ -23,6 +24,11 @@
             <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
                 <form method="get" th:action="@{/admin}">
                     <input type="submit" value="Админка">
+                </form>
+            </div>
+            <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
+                <form method="get" th:action="@{/admin/person}">
+                    <input type="submit" value="Пользователи">
                 </form>
             </div>
             <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">

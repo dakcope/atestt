@@ -128,7 +128,7 @@ h3 {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 15;
+    font-size: 15px;
 }
 
 .product-div{
@@ -251,3 +251,5 @@ h3 {
 .search-div{
     margin-left: 30px;
 }
+
+

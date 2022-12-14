@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/user").hasAnyRole("USER")
                 // Указываем что не аутентифицированные пользователи могут заходить на страницу с формой аутентификации и на объект ошибки
                 // С помощью permitAll указывакем что данные страницы по умолчанию доступны всем пользователям
-                .antMatchers("/auth/login", "/error", "/auth/registration", "/product", "/product/info/{id}", "/img/**", "/product/search").permitAll()
+                .antMatchers( "/login", "/auth/login", "/error", "/auth/registration", "/product", "/product/info/{id}", "/img/**", "/product/search").permitAll()
                 // Указываем что все остальные страницы доступны пользователю с ролью user и admin
                 .anyRequest().hasAnyRole("USER", "ADMIN")
 //                // Указываем что для всех остальных страниц необходимо вызывать метод authenticated, который открываем форму аутентификации
@@ -82,8 +82,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/", "/static/", "/css/", "/js/" , "/img/");
-
+        web
+                .ignoring()
+                .antMatchers("/resources/**", "/static/**","/font/**", "/css/**", "/js/**" );
     }
 
 

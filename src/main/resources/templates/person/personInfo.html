@@ -28,8 +28,8 @@
                 </form>
             </div>
             <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
-                <form method="get" th:action="@{/admin/person}">
-                    <input type="submit" value="Пользователи">
+                <form method="get" th:action="@{/admin}">
+                    <input type="submit" value="Админка">
                 </form>
             </div>
             <div class=" col-md-2 col-sm-12 col-12 text-center align-self-center btn-header-admin">
@@ -42,28 +42,14 @@
 
 </header>
 
-
-<br>
-
-<h3>Личный кабинет администратора</h3>
-<br>
-
-<h3>Каталог товаров: </h3>
-<br>
-<hr>
 <div class="container">
-    <div class="row">
-        <div th:each="product : ${products}" class=" col-md-5 text-md-center  text-sm-center text-center col-sm-11 col-12 product-div-admin">
-            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
-            <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-            <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-            <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-            <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-            <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-            <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
-            <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}" class="admin-btn-prod">Редактировать товар</a>
-            <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}" class="admin-btn-prod">Удалить товар</a>
-        </div>
+    <div>
+        <h3>Информация о пользователе:</h3>
+        <p th:text="'Логин: ' + ${person.getLogin()}"/>
+        <p th:text="'Пароль: ' + ${person.getPassword()}"/>
+        <p th:text="'Роль: ' + ${person.getRole()}"/>
+        <a class="btn btn-primary me-2" th:href="@{/admin/person/edit/{id}(id=${person.getId()})}">Редактировать пользователя</a>
+        <a class="btn btn-danger me-2" th:href="@{/admin/person/delete/{id}(id=${person.getId()})}">Удалить пользователя</a>
     </div>
 </div>
 </body>
